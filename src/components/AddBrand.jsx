@@ -18,7 +18,7 @@ const AddBrand = () => {
         console.log(newBrand);
 
         // send data to the server
-        fetch('http://localhost:5000/brands', {
+        fetch('http://localhost:5000/brand', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -54,7 +54,7 @@ const Register = () => {
             //console.log(result.user);
             const user = { email };
             // send data to the server
-            fetch('http://localhost:5000/users', {
+            fetch('http://localhost:5000/user', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

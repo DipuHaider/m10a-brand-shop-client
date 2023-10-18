@@ -7,6 +7,7 @@ import { updateProfile } from "firebase/auth";
 // import { sendEmailVerification, updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from "sweetalert2";
 
 const Register = () => {
 
@@ -51,6 +52,29 @@ const Register = () => {
         createUser(email, password)
         .then(result => {
             //console.log(result.user);
+            const user = { email };
+            // send data to the server
+            fetch('http://localhost:5000/users', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'User Added Successfully to the database',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
+
+
             toast("Registration Successful");
             setSuccess(`User: ${email} created successfully`);
 

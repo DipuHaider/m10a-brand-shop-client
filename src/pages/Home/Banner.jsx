@@ -5,7 +5,7 @@ const Banner = () => {
                 <img src="https://i.ibb.co/yQSSmF3/home-banner-1.jpg" className="w-full" />
                 <div className="bg-black bg-opacity-50 absolute w-full h-full p-6">
                     <div className="flex flex-col h-full items-center mx-auto pb-6 space-y-10 justify-center">
-                        <h3 className="text-3xl  lg:text-7xl font-semibold leading-5 lg:leading-6 text-theme-primary">LET'S GO PLACES!
+                        <h3 className="text-3xl  lg:text-7xl font-semibold leading-5 lg:leading-6 text-theme-primary">LET`S GO PLACES!
 </h3>
                         <p className="text-2xl lg:text-3xl font-semibold leading-5 lg:leading-6 text-white">Kicking off our new partnership.</p>
                     </div>

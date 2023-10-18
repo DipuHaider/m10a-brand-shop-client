@@ -8,6 +8,7 @@ import Register from "../auth/Register/Register";
 // import Profile from "../pages/Profile/Profile";
 // import ServiceDetail from "../pages/ServiceDetail/ServiceDetail";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import AddBrand from "../components/AddBrand";
 // import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>,
             },
+            {
+                path: "addbrand",
+                element: <AddBrand></AddBrand>,
+              },
             // {
             //     path: '/offers',
             //     element: <PrivateRoutes><Offers></Offers></PrivateRoutes>,

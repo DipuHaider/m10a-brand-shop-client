@@ -46,7 +46,7 @@ const BrandCard = ({ brand, brands, setBrands }) => {
         <NavLink to={`brand/${name}`}>
         <div className="card card-side bg-base-100 shadow-xl">
             
-            <figure><img src={logo} alt="Movie" /></figure>
+            <figure><img src={logo} alt={name} /></figure>
             <div className="flex justify-between w-full pr-4">
                 <div>
                     <h2 className="card-title">Name: {name}</h2>

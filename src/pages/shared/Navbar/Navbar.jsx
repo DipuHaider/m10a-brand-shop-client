@@ -40,10 +40,11 @@ const NavBar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <img className="w-10" src="https://i.ibb.co/2n6cZWP/logo.png" alt="" /><span className="py-2 text-theme-dark text-2xl font-extrabold italic">Automotive </span><span className="py-2 text-theme-primary text-2xl font-extrabold italic">Brand Shop</span>
+                <a href="/"><div className="flex"><img className="w-10 h-10" src="https://i.ibb.co/2n6cZWP/logo.png" alt="" /><span className="py-2 text-theme-dark text-2xl font-extrabold italic">Automotive </span><span className="py-2 text-theme-primary text-2xl font-extrabold italic">Brand Shop</span>
+                    </div></a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 space-x-2">
                     {navLinks}
                 </ul>
             </div>

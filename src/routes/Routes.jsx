@@ -36,6 +36,7 @@ const router = createBrowserRouter([
             {
                 path: '/addproduct',
                 element: <PrivateRoutes><AddProduct></AddProduct></PrivateRoutes>,
+                loader: () => fetch('http://localhost:5000/brand'),
             },
             {
                 path: '/mycart',

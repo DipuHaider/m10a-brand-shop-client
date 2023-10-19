@@ -9,6 +9,8 @@ import Register from "../auth/Register/Register";
 // import ServiceDetail from "../pages/ServiceDetail/ServiceDetail";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AddBrand from "../components/AddBrand";
+import UpdateBrand from "../components/UpdateBrand";
+import SingleBrand from "../components/SingleBrand";
 // import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
@@ -40,7 +42,17 @@ const router = createBrowserRouter([
             {
                 path: "addbrand",
                 element: <AddBrand></AddBrand>,
-              },
+            },
+            {
+                path: "updatebrand/:id",
+                element: <UpdateBrand></UpdateBrand>,
+                loader: ({params}) => fetch(`http://localhost:5000/brand/${params.id}`)
+            },
+            {
+                path: "brand/:id",
+                element: <SingleBrand></SingleBrand>,
+                loader: ({params}) => fetch(`http://localhost:5000/brand/${params.id}`),
+            },
             // {
             //     path: '/offers',
             //     element: <PrivateRoutes><Offers></Offers></PrivateRoutes>,

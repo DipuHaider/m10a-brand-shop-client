@@ -43,7 +43,7 @@ const BrandCard = ({ brand, brands, setBrands }) => {
 
     return (
         <>
-        <Link to={`brand/${_id}`}>
+        <Link to={`brand/${name}`}>
         <div className="card card-side bg-base-100 shadow-xl">
             
             <figure><img src={logo} alt="Movie" /></figure>

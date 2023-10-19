@@ -45,7 +45,7 @@ const UpdateBrand = () => {
 
     return (
         <div className="max-w-7xl mx-auto my-10 p-2">
-        <h2>Add Brand {name}</h2>
+        <h2>update Brand {name}</h2>
         <form onSubmit={handleUpdateBrand} className="mt-8">
             {/* form row */}
             <div className="md:flex mb-8">
@@ -78,7 +78,7 @@ const UpdateBrand = () => {
                 </div>
                 <div className="form-control md:w-1/3 ml-4">
                     <label className="input-group">
-                        <span>Banner 023</span>
+                        <span>Banner 03</span>
                         <input type="text" name="banner3" defaultValue={banner3} placeholder="banner3" className="input input-bordered" />
                     </label>
                 </div>

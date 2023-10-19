@@ -3,7 +3,7 @@ import Root from "../layouts/Root";
 import Home from "../pages/Home/Home";
 import Login from "../auth/Login/Login";
 import Register from "../auth/Register/Register";
-// import PrivateRoutes from "./PrivateRoutes";
+import PrivateRoutes from "./PrivateRoutes";
 // import Offers from "../pages/Offers/Offers";
 // import Profile from "../pages/Profile/Profile";
 // import ServiceDetail from "../pages/ServiceDetail/ServiceDetail";
@@ -11,6 +11,8 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AddBrand from "../components/AddBrand";
 import UpdateBrand from "../components/UpdateBrand";
 import SingleBrand from "../components/SingleBrand";
+import AddProduct from "../pages/Product/AddProduct";
+import MyCart from "../pages/MyCart/MyCart";
 // import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
             //     loader: () => fetch(`events.json`),
                 
             // },
+            {
+                path: '/addproduct',
+                element: <PrivateRoutes><AddProduct></AddProduct></PrivateRoutes>,
+            },
+            {
+                path: '/mycart',
+                element: <MyCart></MyCart>,
+            },
             {
                 path: '/login',
                 element: <Login></Login>,
@@ -53,20 +63,6 @@ const router = createBrowserRouter([
                 element: <SingleBrand></SingleBrand>,
                 loader: ({params}) => fetch(`http://localhost:5000/brand/${params.name}`),
             },
-            // {
-            //     path: '/offers',
-            //     element: <PrivateRoutes><Offers></Offers></PrivateRoutes>,
-            //     loader: () => fetch(`offers.json`),
-                
-            // },
-            // {
-            //     path: '/profile',
-            //     element: <PrivateRoutes><Profile></Profile></PrivateRoutes>,
-            // },
-            // {
-            //     path: '/contact',
-            //     element: <Contact></Contact>,
-            // },
         ]
     }
 ]);

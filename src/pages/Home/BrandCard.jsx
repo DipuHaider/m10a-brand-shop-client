@@ -43,7 +43,7 @@ const BrandCard = ({ brand, brands, setBrands }) => {
 
     return (
         <>
-        <Link to={`brand/${name}`}>
+        <NavLink to={`brand/${name}`}>
         <div className="card card-side bg-base-100 shadow-xl">
             
             <figure><img src={logo} alt="Movie" /></figure>
@@ -54,7 +54,12 @@ const BrandCard = ({ brand, brands, setBrands }) => {
                     <p>{banner2}</p>
                     <p>{banner3}</p>
                 </div>
-                <div className="card-actions justify-end">
+                
+            </div>
+            
+        </div>
+        </NavLink>
+        <div className="card-actions justify-center">
                     <div className="btn-group btn-group-vertical space-y-4">
                         <button className="btn">View</button>
                         <Link to={`updateBrand/${_id}`}>
@@ -65,10 +70,6 @@ const BrandCard = ({ brand, brands, setBrands }) => {
                             className="btn bg-orange-500">X</button>
                     </div>
                 </div>
-            </div>
-            
-        </div>
-        </Link>
         </>
     );
 };

@@ -20,13 +20,12 @@ const NavBar = () => {
         <li><NavLink to="/" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg  border border-none hover:border-white">Home</NavLink></li>
         {
             user ? <>
-                <li><NavLink to="/offers" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-none hover:border-white">Offers</NavLink></li>
-                <li><NavLink to="/profile" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-none hover:border-white">Profile</NavLink></li>
+                <li><NavLink to="/addproduct" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-none hover:border-white">Add Product</NavLink></li>
             </>
             : 
             <></>
         }
-        <li><NavLink to="/contact" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-none hover:border-white">Contact</NavLink></li>
+        <li><NavLink to="/mycart" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-none hover:border-white">My Cart</NavLink></li>
     </>
 
 

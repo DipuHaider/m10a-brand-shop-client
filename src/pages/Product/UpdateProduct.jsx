@@ -1,10 +1,27 @@
+import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
 
     const product = useLoaderData();
-    const { _id, image, name,  price, desc, rating} = product;
+    const { _id, image, name, brandname, type, price, desc, rating} = product;
+    // { image, name, brandname, type, price, desc, rating }
+
+    // State to store product data
+    const [brands, setBrands] = useState([]);
+
+    useEffect(() => {
+        // Fetch product data from the API
+        fetch("http://localhost:5000/brand")
+            .then((response) => response.json())
+            .then((data) => {
+                setBrands(data); // Update the products state with the fetched data
+            })
+            .catch((error) => {
+                console.error("Error fetching product data:", error);
+            });
+    }, []); // The empty dependency array ensures this effect runs once on component mount
 
     const handleUpdateProduct = event => {
         event.preventDefault();
@@ -13,11 +30,13 @@ const UpdateProduct = () => {
 
         const image = form.image.value;
         const name = form.name.value;
+        const brandname = form.brandname.value;
+        const type = form.type.value;
         const price = form.price.value;
         const desc = form.desc.value;
         const rating = form.rating.value;
 
-        const updatedProduct = { image, name,  price, desc, rating }
+        const updatedProduct = { image, name, brandname, type, price, desc, rating }
 
         console.log(updatedProduct);
 
@@ -61,7 +80,7 @@ const UpdateProduct = () => {
                             </label>
                             <input type="text" name="name" defaultValue={name} className="w-full input input-bordered input-primary border-theme-primary" />
                         </div>
-                        {/* <div className="mt-10 flex gap-x-6 gap-y-8 sm:grid-cols-6">
+                         <div className="mt-10 flex gap-x-6 gap-y-8 sm:grid-cols-6">
                             <div className="flex-1">
                                 <label className="label">
                                     <span className="text-base label-text">Brand Name</span>
@@ -72,6 +91,7 @@ const UpdateProduct = () => {
                                         brands?.map(brand => <option
                                             key={brand._id}
                                             value={brand._id}
+                                            selected={brandname === brand._id ? "selected" : null}
                                         >{brand.name}</option>)
                                     } 
                                 </select>
@@ -81,16 +101,16 @@ const UpdateProduct = () => {
                                 <label className="label">
                                     <span className="text-base label-text">Type</span>
                                 </label>
-                                <select name="type" className="select select-bordered border-theme-primary w-full max-w-xs">
-                                    <option>Crossover</option>
-                                    <option>Electric</option>
-                                    <option>Hybrid</option>
-                                    <option>Sedan</option>
-                                    <option>Sports</option>
-                                    <option>SUV</option>
+                                <select name="type" value={type} className="select select-bordered border-theme-primary w-full max-w-xs">
+                                    <option value="Crossover">Crossover</option>
+                                    <option value="Electric">Electric</option>
+                                    <option value="Hybrid">Hybrid</option>
+                                    <option value="Sedan">Sedan</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="SUV">SUV</option>
                                 </select>
                             </div>
-                        </div> */}
+                        </div> 
 
                         <div className="mt-10 flex gap-x-6 gap-y-8 sm:grid-cols-6">
                             <div className="flex-1">

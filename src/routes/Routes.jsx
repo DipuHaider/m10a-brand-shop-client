@@ -14,6 +14,7 @@ import SingleBrand from "../components/SingleBrand";
 import AddProduct from "../pages/Product/AddProduct";
 import MyCart from "../pages/MyCart/MyCart";
 import ProductDetail from "../pages/Product/ProductDetail";
+import UpdateProduct from "../pages/Product/UpdateProduct";
 // import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
                 path: "product/:id",
                 element: <ProductDetail></ProductDetail>,
                 loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`),
+            },
+            {
+                path: "updateproduct/:id",
+                element: <UpdateProduct></UpdateProduct>,
+                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
             },
             {
                 path: '/mycart',

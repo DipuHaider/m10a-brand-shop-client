@@ -4,6 +4,8 @@ import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
 import Brands from "./Brands";
 import BrandCard from './BrandCard';
+import OurPartners from './OurPartners';
+import UpcomingEvents from './UpcomingEvents';
 
 
 const Home = () => {
@@ -28,6 +30,8 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <OurPartners></OurPartners>
+            <UpcomingEvents></UpcomingEvents>
         </div>
         
     );

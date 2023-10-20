@@ -71,7 +71,7 @@ const AddProduct = () => {
                                     {
                                         brands?.map(brand => <option
                                             key={brand._id}
-                                            value={brand.name}
+                                            value={brand._id}
                                         >{brand.name}</option>)
                                     }
                                 </select>

@@ -1,3 +1,5 @@
+import { useLoaderData } from 'react-router-dom';
+
 const ProductDetail = () => {
 
     const product = useLoaderData();

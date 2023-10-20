@@ -17,14 +17,16 @@ const Home = () => {
             <Banner></Banner>
             <div className="max-w-7xl mx-auto my-10 p-2">
                 <Brands></Brands>
-                {
-                    brands?.map(brand => <BrandCard
-                        key={brand._id}
-                        brand={brand}
-                        brands={brands}
-                        setBrands={setBrands}
-                    ></BrandCard>)
-                }
+                <div className='grid grid-cols-3 gap-4'>
+                    {
+                        brands?.map(brand => <BrandCard
+                            key={brand._id}
+                            brand={brand}
+                            brands={brands}
+                            setBrands={setBrands}
+                        ></BrandCard>)
+                    }
+                </div>
             </div>
         </div>
         

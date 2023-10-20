@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const SingleBrand = () => {
     const brand = useLoaderData();
@@ -36,7 +36,7 @@ const SingleBrand = () => {
                 {products.map((product) => {
                     if (product.brandname === brand._id) {
                         return (
-                            <li key={product._id}><Link to={`/product/${_id}`}>{product.name}</Link></li>
+                            <li key={product._id}><Link to={`/product/${product._id}`}>{product.name}</Link></li>
                             
                         );
                     }

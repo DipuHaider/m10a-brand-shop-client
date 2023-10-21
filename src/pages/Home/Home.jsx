@@ -17,9 +17,9 @@ const Home = () => {
         <div>
             <Helmet><title>Home | Automotive</title></Helmet>
             <Banner></Banner>
-            <div className="max-w-7xl mx-auto my-10 p-2">
+            <div className="max-w-7xl mx-auto my-4">
                 <Brands></Brands>
-                <div className='grid grid-cols-3 gap-4'>
+                <div className='grid grid-cols-3 gap-3'>
                     {
                         brands?.map(brand => <BrandCard
                             key={brand._id}

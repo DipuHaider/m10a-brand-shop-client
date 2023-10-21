@@ -49,10 +49,9 @@ const SingleBrand = () => {
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out">
-        
-            <div className="flex flex-col items-center text-center">
-                <h2 className="text-4xl text-theme-light font-extralight mb-6">{name}</h2>
-                <img src={logo} alt={name} />
+            <div className="flex">
+                <img className="w-32" src={logo} alt={name} />
+                <span className="py-2 text-theme-primary text-5xl font-bold italic my-auto mx-4">{name}</span>
             </div>
             
             {/* <img src={banner1} alt={`${name} Banner 1`} />
@@ -70,17 +69,17 @@ const SingleBrand = () => {
                             <>
                             
                             <div className="card w-96 bg-base-100 shadow-xl hover:shadow-theme-primary" key={product._id}>
-                                <figure className="px-10 pt-10">
-                                    <img  src={product.image} alt={product.name} className="rounded-xl" />
+                                <figure className="px-4 pt-4">
+                                    <img  src={product.image} alt={product.name} className="rounded-xl w-72" />
                                 </figure>
-                                <div className="card-body items-center text-center">
-                                    <h2 className="card-title justify-center text-2xl text-theme-primary">{product.name}</h2>
+                                <div className=" items-center text-left">
+                                    <h2 className="card-title justify-left text-2xl text-theme-primary px-8 py-2">{product.name}</h2>
                                 </div>
-                                <div className="card-body items-start text-left">
-                                    <p className="justify-start text-xl text-slate-900">{product.type}</p>
-                                    <p className="justify-start text-xl text-slate-900">${product.price}</p>
+                                <div className="card-body items-start text-left px-8 py-2">
+                                    <p className="justify-start text-lg text-slate-900">{product.type}</p>
+                                    <p className="justify-start text-lg text-slate-900">${product.price}</p>
                                     <p className="justify-start text-xl text-slate-900">{product.rating} * Rated</p>
-                                    <p className="justify-start text-xl text-slate-900">{product.desc}</p>
+                                    <p className="justify-start text-base text-slate-900">{product.desc}</p>
                                 </div>
                                 <div className="card-actions justify-center mb-5">
                                     <div className="btn-group btn-group-horizontal space-x-4">

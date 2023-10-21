@@ -48,7 +48,7 @@ const SingleBrand = () => {
                 </div>
             </div>
         </div>
-        <div className="max-w-6xl mx-auto my-20" data-aos="fade-up"data-aos-offset="200"
+        <div className="max-w-7xl mx-auto my-20" data-aos="fade-up"data-aos-offset="200"
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out">
@@ -64,7 +64,7 @@ const SingleBrand = () => {
                 </div>
                 ) : (
                 filteredProducts.map((product) => (
-                    <div className="card w-96 bg-base-100 shadow-xl hover:shadow-theme-primary" key={product._id}>
+                    <div className="card bg-base-100 shadow-xl hover:shadow-theme-primary" key={product._id}>
                         <figure className="px-4 pt-4">
                             <img  src={product.image} alt={product.name} className="rounded-xl w-72" />
                         </figure>
@@ -79,7 +79,7 @@ const SingleBrand = () => {
                             <p className="justify-start text-base text-slate-900">{product.desc}</p>
                         </div>
                         <div className="card-actions justify-center mb-5">
-                            <div className="btn-group btn-group-horizontal space-x-4">
+                            <div className="btn-group btn-group-vertical md:btn-group-horizontal space-x-4">
                             <Link to={`/product/${product._id}`}><button className="btn">Details</button></Link>
                             <Link to={`/updateProduct/${product._id}`}><button className="btn">Update</button></Link>
                             </div>

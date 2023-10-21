@@ -9,7 +9,7 @@ const BrandCard = ({ brand, brands, setBrands }) => {
         <>
         <NavLink to={`brand/${_id}`}>
 
-        <div className="card w-96 bg-base-100 shadow-xl hover:shadow-theme-primary">
+        <div className="card bg-base-100 shadow-xl hover:shadow-theme-primary">
             <figure className="px-10 pt-5">
                 <img src={logo} alt={name} className="rounded-xl w-48" />
             </figure>

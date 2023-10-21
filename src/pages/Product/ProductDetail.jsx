@@ -14,11 +14,8 @@ const ProductDetail = () => {
     
             const productName = name;
             const productOwner = user.email;
-            console.log(productOwner)
 
             const addedProduct = { productName, productOwner }
-    
-            console.log(addedProduct);
     
             // send data to the server
             fetch('http://localhost:5000/cart', {
@@ -43,7 +40,7 @@ const ProductDetail = () => {
         }
 
     return (
-        <div className='max-w-6xl mx-auto m-20'>
+        <div className='max-w-7xl mx-auto m-20'>
             <div className="card card-side bg-base-100 shadow-xl">
                 <figure><img className="px-10 pt-10" src={image} alt={name}/></figure>
                 <div className="card-body">
@@ -56,11 +53,6 @@ const ProductDetail = () => {
                         <p><button onClick={() => handleAddCart(name)} className="btn btn-md bg-theme-primary text-white hover:text-theme-primary hover:bg-blue-200 hover:border-theme-primary">Add To Cart</button></p>
                     </div>
                 </div>
-                {/* <div className="card-actions justify-center mb-5">
-                    <div className="btn-group btn-group-horizontal space-x-4">
-                        
-                    </div>
-                </div> */}
             </div>
         </div>
     );

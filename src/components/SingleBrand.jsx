@@ -87,40 +87,6 @@ const SingleBrand = () => {
                     </div>
                 ))
             )}
-                {/* {products.map((product) => {
-                    
-                    if (product.brandname === brand._id) {
-                        return (
-                            <>
-                            
-                            <div className="card w-96 bg-base-100 shadow-xl hover:shadow-theme-primary" key={product._id}>
-                                <figure className="px-4 pt-4">
-                                    <img  src={product.image} alt={product.name} className="rounded-xl w-72" />
-                                </figure>
-                                <div className=" items-center text-left">
-                                    <h2 className="card-title justify-left text-2xl text-theme-primary px-8 py-2">{product.name}</h2>
-                                    <h2 className="card-title justify-left text-xl text-slate-700 px-8 py-2">Brand: {name}</h2>
-                                </div>
-                                <div className="card-body items-start text-left px-8 py-2">
-                                    <p className="justify-start text-lg text-slate-900">{product.type}</p>
-                                    <p className="justify-start text-lg text-slate-900">${product.price}</p>
-                                    <p className="justify-start text-xl text-slate-900">{product.rating} * Rated</p>
-                                    <p className="justify-start text-base text-slate-900">{product.desc}</p>
-                                </div>
-                                <div className="card-actions justify-center mb-5">
-                                    <div className="btn-group btn-group-horizontal space-x-4">
-                                    <Link to={`/product/${product._id}`}><button className="btn">Details</button></Link>
-                                    <Link to={`/updateProduct/${product._id}`}><button className="btn">Update</button></Link>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                            </>
-                        );
-                    }
-                    return null; // Return null for products that don't match the condition
-                })} */}
             </div>
         </div>
         </>

@@ -25,7 +25,7 @@ const NavBar = () => {
             : 
             <></>
         }
-        <li><NavLink to="/mycart" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-none hover:border-white">My Cart</NavLink></li>
+        <li><NavLink to="/cart" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-none hover:border-white">My Cart</NavLink></li>
     </>
 
 

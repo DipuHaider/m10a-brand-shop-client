@@ -16,8 +16,7 @@ const ProductDetail = () => {
             const productOwner = user.email;
 
             const addedProduct = { productName, productOwner }
-    
-            // send data to the server
+
             fetch('http://localhost:5000/cart', {
                 method: 'POST',
                 headers: {

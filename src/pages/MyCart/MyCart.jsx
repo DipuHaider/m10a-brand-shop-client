@@ -10,15 +10,15 @@ const MyCart = () => {
     return (
         <div>
           <div className='grid grid-cols-3 gap-3'>
-                    {
-                        carts?.map(cart => <CartCard
-                            key={cart._id}
-                            cart={cart}
-                            carts={carts}
-                            setCarts={setCarts}
-                        ></CartCard>)
-                    }
-                </div>
+                {
+                    carts?.map(cart => <CartCard
+                        key={cart._id}
+                        cart={cart}
+                        carts={carts}
+                        setCarts={setCarts}
+                    ></CartCard>)
+                }
+            </div>
         </div>
     );
 };

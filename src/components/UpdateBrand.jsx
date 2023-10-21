@@ -21,7 +21,6 @@ const UpdateBrand = () => {
 
         console.log(updatedBrand);
 
-        // send data to the server
         fetch(`http://localhost:5000/brand/${_id}`, {
             method: 'PUT',
             headers: {

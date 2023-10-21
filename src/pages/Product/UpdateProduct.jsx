@@ -6,22 +6,19 @@ const UpdateProduct = () => {
 
     const product = useLoaderData();
     const { _id, image, name, brandname, type, price, desc, rating} = product;
-    // { image, name, brandname, type, price, desc, rating }
 
-    // State to store product data
     const [brands, setBrands] = useState([]);
 
     useEffect(() => {
-        // Fetch product data from the API
         fetch("http://localhost:5000/brand")
             .then((response) => response.json())
             .then((data) => {
-                setBrands(data); // Update the products state with the fetched data
+                setBrands(data);
             })
             .catch((error) => {
                 console.error("Error fetching product data:", error);
             });
-    }, []); // The empty dependency array ensures this effect runs once on component mount
+    }, []);
 
     const handleUpdateProduct = event => {
         event.preventDefault();
@@ -40,7 +37,6 @@ const UpdateProduct = () => {
 
         console.log(updatedProduct);
 
-        // send data to the server
         fetch(`http://localhost:5000/product/${_id}`, {
             method: 'PUT',
             headers: {

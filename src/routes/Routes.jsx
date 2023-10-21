@@ -4,9 +4,6 @@ import Home from "../pages/Home/Home";
 import Login from "../auth/Login/Login";
 import Register from "../auth/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
-// import Offers from "../pages/Offers/Offers";
-// import Profile from "../pages/Profile/Profile";
-// import ServiceDetail from "../pages/ServiceDetail/ServiceDetail";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AddBrand from "../components/AddBrand";
 import UpdateBrand from "../components/UpdateBrand";
@@ -15,7 +12,6 @@ import AddProduct from "../pages/Product/AddProduct";
 import MyCart from "../pages/MyCart/MyCart";
 import ProductDetail from "../pages/Product/ProductDetail";
 import UpdateProduct from "../pages/Product/UpdateProduct";
-// import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
     {
@@ -27,14 +23,7 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: () => fetch('http://localhost:5000/brand'),
-                // loader: () => fetch('events.json'),
             },
-            // {
-            //     path: '/:id',
-            //     element: <PrivateRoutes><ServiceDetail></ServiceDetail></PrivateRoutes>,
-            //     loader: () => fetch(`events.json`),
-                
-            // },
             {
                 path: '/addproduct',
                 element: <PrivateRoutes><AddProduct></AddProduct></PrivateRoutes>,

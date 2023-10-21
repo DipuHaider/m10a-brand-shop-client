@@ -22,27 +22,27 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/brand'),
+                loader: () => fetch('https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/brand'),
             },
             {
                 path: '/addproduct',
                 element: <PrivateRoutes><AddProduct></AddProduct></PrivateRoutes>,
-                loader: () => fetch('http://localhost:5000/brand'),
+                loader: () => fetch('https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/brand'),
             },
             {
                 path: "product/:id",
                 element: <PrivateRoutes><ProductDetail></ProductDetail></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`),
+                loader: ({params}) => fetch(`https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/product/${params.id}`),
             },
             {
                 path: "updateproduct/:id",
                 element: <PrivateRoutes><UpdateProduct></UpdateProduct></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/product/${params.id}`)
             },
             {
                 path: '/cart',
                 element: <PrivateRoutes><MyCart></MyCart></PrivateRoutes>,
-                loader: () => fetch('http://localhost:5000/cart'),
+                loader: () => fetch('https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/cart'),
             },
             {
                 path: '/login',
@@ -59,12 +59,12 @@ const router = createBrowserRouter([
             {
                 path: "updatebrand/:id",
                 element: <UpdateBrand></UpdateBrand>,
-                loader: ({params}) => fetch(`http://localhost:5000/brand/${params.id}`)
+                loader: ({params}) => fetch(`https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/brand/${params.id}`)
             },
             {
                 path: "brand/:id",
                 element: <SingleBrand></SingleBrand>,
-                loader: ({params}) => fetch(`http://localhost:5000/brand/${params.id}`),
+                loader: ({params}) => fetch(`https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/brand/${params.id}`),
             },
         ]
     }

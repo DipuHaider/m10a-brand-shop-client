@@ -6,7 +6,7 @@ The "Automotive Brand Shop" is an e-commerce website focused on automotive produ
 
 ## Live Project
 
-- [Project Live Link](https://your-project-live-link.com)
+- https://653405b856d42a48957ea60b--eclectic-gelato-d72371.netlify.app/
 
 ## Key Features
 

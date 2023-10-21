@@ -10,7 +10,7 @@ const SingleBrand = () => {
 
     useEffect(() => {
         
-        fetch("http://localhost:5000/product")
+        fetch("https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/product")
             .then((response) => response.json())
             .then((data) => {
                 setProducts(data);

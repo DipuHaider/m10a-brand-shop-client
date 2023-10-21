@@ -18,7 +18,7 @@ const AddBrand = () => {
         console.log(newBrand);
 
         // send data to the server
-        fetch('http://localhost:5000/brand', {
+        fetch('https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/brand', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -20,7 +20,7 @@ const AddProduct = () => {
         const newProduct = { image, name, brandname, type, price, desc, rating }
 
 
-        fetch('http://localhost:5000/product', {
+        fetch('https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -17,15 +17,15 @@ const NavBar = () => {
     const userDefaultPic = "https://i.ibb.co/F7V7vzb/user.jpg";
 
     const navLinks = <>
-        <li><NavLink to="/" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg  border border-none hover:border-white">Home</NavLink></li>
+        <li><NavLink to="/" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-theme-primary rounded shadow hover:shadow-lg  border border-none hover:border-white">Home</NavLink></li>
         {
             user ? <>
-                <li><NavLink to="/addproduct" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-none hover:border-white">Add Product</NavLink></li>
+                <li><NavLink to="/addproduct" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-theme-primary rounded shadow hover:shadow-lg py-2 px-4 border border-none hover:border-white">Add Product</NavLink></li>
             </>
             : 
             <></>
         }
-        <li><NavLink to="/cart" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-none hover:border-white">My Cart</NavLink></li>
+        <li><NavLink to="/cart" className="text-lg bg-transparent hover:bg-text-theme-light text-theme-light hover:text-theme-primary rounded shadow hover:shadow-lg py-2 px-4 border border-none hover:border-white">My Cart</NavLink></li>
     </>
 
 
@@ -59,12 +59,12 @@ const NavBar = () => {
                 {
                     user ? <>
                         <span>{user.displayName}</span>
-                        <a onClick={handleSignOut} className="bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-theme-light hover:border-white">Log Out</a>
+                        <a onClick={handleSignOut} className="bg-transparent hover:bg-text-theme-light text-theme-light hover:text-theme-primary rounded shadow hover:shadow-lg py-2 px-4 border border-theme-light hover:border-white">Log Out</a>
                     </>
                     : 
                     <>
-                        <Link to="/login"><button className="bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-theme-light hover:border-white">Login</button></Link>
-                        <Link to="/register"><button className="bg-transparent hover:bg-text-theme-light text-theme-light hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-theme-light hover:border-white">Register</button></Link> 
+                        <Link to="/login"><button className="bg-transparent hover:bg-text-theme-light text-theme-light hover:text-theme-primary rounded shadow hover:shadow-lg py-2 px-4 border border-theme-light hover:border-white">Login</button></Link>
+                        <Link to="/register"><button className="bg-transparent hover:bg-text-theme-light text-theme-light hover:text-theme-primary rounded shadow hover:shadow-lg py-2 px-4 border border-theme-light hover:border-white">Register</button></Link> 
                     </>
                 }
             </div>

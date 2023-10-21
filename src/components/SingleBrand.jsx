@@ -3,22 +3,25 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const SingleBrand = () => {
     const brand = useLoaderData();
-    const { _id, name, logo, banner1, banner2, banner3 } = brand;
+    const { name, logo, banner1, banner2, banner3 } = brand;
     
-    // State to store product data
+    
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        // Fetch product data from the API
+        
         fetch("http://localhost:5000/product")
             .then((response) => response.json())
             .then((data) => {
-                setProducts(data); // Update the products state with the fetched data
+                setProducts(data);
             })
             .catch((error) => {
                 console.error("Error fetching product data:", error);
             });
-    }, []); // The empty dependency array ensures this effect runs once on component mount
+    }, []);
+
+    const filteredProducts = products.filter((product) => product.brandname === brand._id);
+
 
     return (
         <>
@@ -53,17 +56,39 @@ const SingleBrand = () => {
                 <img className="w-32" src={logo} alt={name} />
                 <span className="py-2 text-theme-primary text-5xl font-bold italic my-auto mx-4">{name}</span>
             </div>
-            
-            {/* <img src={banner1} alt={`${name} Banner 1`} />
-            <img src={banner2} alt={`${name} Banner 2`} />
-            <img src={banner3} alt={`${name} Banner 3`} /> */}
-            
-
             <div className='grid grid-cols-3 gap-4'>
-                {/* {products.map((product) => (
-                    <li key={product._id}>{product.name}</li>
-                ))} */}
-                {products.map((product) => {
+
+            {filteredProducts.length === 0 ? (
+                <div className="alert alert-error mt-4">
+                    No products found.
+                </div>
+                ) : (
+                filteredProducts.map((product) => (
+                    <div className="card w-96 bg-base-100 shadow-xl hover:shadow-theme-primary" key={product._id}>
+                        <figure className="px-4 pt-4">
+                            <img  src={product.image} alt={product.name} className="rounded-xl w-72" />
+                        </figure>
+                        <div className=" items-center text-left">
+                            <h2 className="card-title justify-left text-2xl text-theme-primary px-8 py-2">{product.name}</h2>
+                            <h2 className="card-title justify-left text-xl text-slate-700 px-8 py-2">Brand: {name}</h2>
+                        </div>
+                        <div className="card-body items-start text-left px-8 py-2">
+                            <p className="justify-start text-lg text-slate-900">{product.type}</p>
+                            <p className="justify-start text-lg text-slate-900">${product.price}</p>
+                            <p className="justify-start text-xl text-slate-900">{product.rating} * Rated</p>
+                            <p className="justify-start text-base text-slate-900">{product.desc}</p>
+                        </div>
+                        <div className="card-actions justify-center mb-5">
+                            <div className="btn-group btn-group-horizontal space-x-4">
+                            <Link to={`/product/${product._id}`}><button className="btn">Details</button></Link>
+                            <Link to={`/updateProduct/${product._id}`}><button className="btn">Update</button></Link>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            )}
+                {/* {products.map((product) => {
+                    
                     if (product.brandname === brand._id) {
                         return (
                             <>
@@ -74,6 +99,7 @@ const SingleBrand = () => {
                                 </figure>
                                 <div className=" items-center text-left">
                                     <h2 className="card-title justify-left text-2xl text-theme-primary px-8 py-2">{product.name}</h2>
+                                    <h2 className="card-title justify-left text-xl text-slate-700 px-8 py-2">Brand: {name}</h2>
                                 </div>
                                 <div className="card-body items-start text-left px-8 py-2">
                                     <p className="justify-start text-lg text-slate-900">{product.type}</p>
@@ -85,9 +111,6 @@ const SingleBrand = () => {
                                     <div className="btn-group btn-group-horizontal space-x-4">
                                     <Link to={`/product/${product._id}`}><button className="btn">Details</button></Link>
                                     <Link to={`/updateProduct/${product._id}`}><button className="btn">Update</button></Link>
-                                        <button
-                                            onClick={() => handleDelete(_id)}
-                                            className="btn bg-orange-500">X</button>
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +120,7 @@ const SingleBrand = () => {
                         );
                     }
                     return null; // Return null for products that don't match the condition
-                })}
+                })} */}
             </div>
         </div>
         </>

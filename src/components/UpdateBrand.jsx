@@ -21,7 +21,7 @@ const UpdateBrand = () => {
 
         console.log(updatedBrand);
 
-        fetch(`https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/brand/${_id}`, {
+        fetch(`https://m10a-brand-shop-server-283gyzcf7-dipuhaiders-projects.vercel.app/brand/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

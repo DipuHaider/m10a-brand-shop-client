@@ -54,7 +54,7 @@ const Register = () => {
             //console.log(result.user);
             const user = { email };
             // send data to the server
-            fetch('https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/user', {
+            fetch('https://m10a-brand-shop-server-283gyzcf7-dipuhaiders-projects.vercel.app/user', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

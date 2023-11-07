@@ -10,7 +10,7 @@ const UpdateProduct = () => {
     const [brands, setBrands] = useState([]);
 
     useEffect(() => {
-        fetch("https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/brand")
+        fetch("https://m10a-brand-shop-server-283gyzcf7-dipuhaiders-projects.vercel.app/brand")
             .then((response) => response.json())
             .then((data) => {
                 setBrands(data);
@@ -37,7 +37,7 @@ const UpdateProduct = () => {
 
         console.log(updatedProduct);
 
-        fetch(`https://m10a-brand-shop-server-l0y9ghnv4-dipuhaiders-projects.vercel.app/product/${_id}`, {
+        fetch(`https://m10a-brand-shop-server-283gyzcf7-dipuhaiders-projects.vercel.app/product/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
